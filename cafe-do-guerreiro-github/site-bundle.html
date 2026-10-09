@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CafÃ© do Guerreiro â€” Bundle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%238B4513'>â˜•</text></svg>">
+    <style>
+/* inlined css/style-cleaned.css (core styles) */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--color-primary:#010000;--color-secondary:#bb9e79;--color-dark:#000000;--color-light:#F5F5F0;--color-accent:#C85A1C;--font-serif:'Merriweather',serif;--font-sans:'Open Sans',sans-serif;--spacing-xs:.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:3rem;--spacing-xl:4rem;--transition:all .3s ease;--shadow-sm:0 2px 10px rgba(0,0,0,.08);--shadow-md:0 4px 12px rgba(0,0,0,.12);--shadow-lg:0 8px 20px rgba(0,0,0,.15)}
+body.dark-mode{--color-primary:#1a1a1a;--color-secondary:#d0d0d0;--color-dark:#FFFFFF;--color-light:#2a2a2a;--color-accent:#ff9d5c}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);line-height:1.6;color:var(--color-dark);background-color:var(--color-light);transition:background-color .3s ease,color .3s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3{font-family:var(--font-serif);color:var(--color-dark);font-weight:600}
+header{background-color:var(--color-primary);color:var(--color-white);padding:var(--spacing-sm) 0;position:sticky;top:0;z-index:1000}
+.navbar{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 var(--spacing-md);flex-wrap:wrap;gap:var(--spacing-md)}
+.logo img{height:50px}
+.nav-links{display:flex;list-style:none;gap:var(--spacing-md)}
+.nav-links a{color:var(--color-white);font-weight:500;padding:var(--spacing-xs) var(--spacing-sm);border-radius:4px}
+.nav-links a.active{background-color:var(--color-accent);border-bottom:3px solid var(--color-white)}
+main{max-width:1200px;margin:0 auto;padding:var(--spacing-md);min-height:calc(100vh - 200px)}
+.hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%);color:var(--color-white);padding:var(--spacing-xl) var(--spacing-md);text-align:center;border-radius:10px;margin-bottom:var(--spacing-xl)}
+.btn{display:inline-block;padding:var(--spacing-xs) var(--spacing-md);border:none;border-radius:5px;font-weight:600;transition:var(--transition);font-size:1rem;cursor:pointer}
+.btn-primary{background-color:var(--color-accent);color:var(--color-white)}
+.cards-container{display:flex;flex-wrap:wrap;gap:var(--spacing-md);justify-content:space-between}
+.card{background:var(--color-white);padding:var(--spacing-md);border-radius:8px;box-shadow:var(--shadow-md);flex:1;min-width:280px}
+.testimonials{background-color:var(--color-secondary);padding:var(--spacing-lg) var(--spacing-md);border-radius:8px}
+.footer-content{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:var(--spacing-lg);justify-content:space-between;margin-bottom:var(--spacing-lg)}
+.footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.2);padding-top:var(--spacing-md);text-align:center;font-size:.9rem}
+.page{display:none}
+.page.active{display:block}
+.menu-item-card{background:var(--color-white);padding:12px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;gap:12px;align-items:center}
+.menu-item-thumb{width:84px;height:84px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.menu-item-thumb img{width:100%;height:100%;object-fit:cover}
+.menu-item-meta{flex:1}
+.cart-count{background:#fff;color:var(--color-accent);padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700}
+    </style>
+</head>
+<body>
+    <div id="cg-error" style="position:fixed;left:8px;right:8px;bottom:8px;background:#ffefef;color:#900;padding:10px;border-radius:6px;display:none;z-index:9999;box-shadow:0 2px 10px rgba(0,0,0,.2)"></div>
+    <noscript style="display:block;background:#fff3cd;padding:12px;text-align:center;">Este arquivo precisa de JavaScript ativo para funcionar corretamente. Ative o JavaScript no seu navegador.</noscript>
+    <script>
+        window.addEventListener('error', function(e){
+            try{
+                var el = document.getElementById('cg-error');
+                el.style.display = 'block';
+                el.textContent = 'Erro: ' + (e.message || e.error || e.filename || 'ver console');
+            }catch(err){ /* ignore */ }
+        });
+        window.addEventListener('unhandledrejection', function(e){
+            try{
+                var el = document.getElementById('cg-error');
+                el.style.display = 'block';
+                var msg = (e.reason && e.reason.message) ? e.reason.message : JSON.stringify(e.reason);
+                el.textContent = 'Promise rejection: ' + msg;
+            }catch(err){ /* ignore */ }
+        });
+    </script>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="#home"><img src="https://i.im.ge/QMm6nVh/image_2026-06-10_163918077.png" alt="CafÃ© do Guerreiro" loading="lazy"></a></div>
+            <ul class="nav-links" role="menubar">
+                <li><a href="#home" data-target="home" class="nav-link active">Home</a></li>
+                <li><a href="#sobre" data-target="sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#menu" data-target="menu" class="nav-link">Menu</a></li>
+                <li><a href="#promocoes" data-target="promocoes" class="nav-link">PromoÃ§Ãµes</a></li>
+                <li><a href="#galeria" data-target="galeria" class="nav-link">Galeria</a></li>
+                <li><a href="#depoimentos" data-target="depoimentos" class="nav-link">Depoimentos</a></li>
+                <li><a href="#blog" data-target="blog" class="nav-link">Blog</a></li>
+                <li><a href="#contato" data-target="contato" class="nav-link">Contato</a></li>
+                <li><a href="#checkout" data-target="checkout" class="nav-link">Carrinho <span id="cartCount" class="cart-count">0</span></a></li>
+            </ul>
+            <div style="display:flex;gap:8px;align-items:center;margin-left:1rem">
+                <button id="themeToggle" aria-label="Alternar tema">ðŸŒ“</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <section class="hero"><h2>CafÃ© do Guerreiro</h2><p class="subtitle">ForÃ§a, tradiÃ§Ã£o e sabor em cada xÃ­cara.</p><p class="hero-text">No CafÃ© do Guerreiro, acreditamos que um bom cafÃ© Ã© mais do que uma bebida: Ã© um momento de pausa, foco e energia para enfrentar o dia.</p><a href="#menu" class="btn btn-primary">ConheÃ§a nosso menu</a></section>
+            <section class="highlights"><h2>Nossos Destaques</h2><div class="cards-container"><article class="card"><h3>â˜• CafÃ©s Especiais</h3><p>GrÃ£os selecionados, torrados artesanalmente.</p></article><article class="card"><h3>ðŸ° Doces Artesanais</h3><p>Preparados diariamente.</p></article><article class="card"><h3>ðŸ  Ambiente Acolhedor</h3><p>Um espaÃ§o pensado para quem busca tranquilidade.</p></article></div></section>
+        </section>
+
+        <section id="sobre" class="page">
+            <section class="about-hero"><h1>Sobre o CafÃ© do Guerreiro</h1></section>
+            <section class="about-content"><article><h2>Nossa HistÃ³ria</h2><p>O CafÃ© do Guerreiro nasceu da paixÃ£o pelo cafÃ© e da filosofia de que cada dia Ã© uma batalha que merece ser enfrentada com energia.</p></article><figure class="about-image"><img src="https://i.im.ge/2026/01/28/GGMvJm.imagem-2026-01-27-173309941.png" alt="Interior do CafÃ©"><figcaption>Interior do CafÃ©</figcaption></figure></section>
+        </section>
+
+        <section id="menu" class="page">
+            <section class="menu-hero"><h1>Nosso Menu</h1><p style="font-size:1.1rem;color:var(--color-white);margin-top:var(--spacing-md)">Sabor artesanal em cada preparaÃ§Ã£o</p></section>
+            <div id="categoryControls" class="cat-buttons"></div>
+            <section class="menu-section-wrapper" id="menuSection"><div class="menu-controls-bar"><div class="search-wrapper"><input id="searchInput" type="text" placeholder="ðŸ” Buscar nome ou descriÃ§Ã£o" class="search-input"></div><div class="sort-wrapper"><label class="sort-label">Ordenar:</label><select id="sortSelect" class="sort-select"><option value="default">PadrÃ£o</option><option value="price-asc">PreÃ§o â†‘</option><option value="price-desc">PreÃ§o â†“</option><option value="name-asc">Aâ€“Z</option></select></div></div><div id="menuGrid" style="display:flex;flex-direction:column;gap:1rem;"></div></section>
+            <div id="modal" class="modal" aria-hidden="true"></div>
+            <div id="toast" class="toast" aria-live="polite" style="display:none"></div>
+            <script id="menu-data" type="application/json">[{"id":1,"nome":"Espresso Guerreiro","categoria":"CafÃ©s","preco":6.00,"descricao":"CafÃ© intenso e encorpado","imagem":"https://i.postimg.cc/13WPBxM8/Chat-GPT-Image-Feb-2-2026-09-11-14-AM.png","isPromo":false},{"id":2,"nome":"Cappuccino ClÃ¡ssico","categoria":"CafÃ©s","preco":9.00,"descricao":"CafÃ©, leite vaporizado e espuma cremosa","imagem":"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=800&auto=format&fit=crop","isPromo":false},{"id":6,"nome":"Bolo Caseiro","categoria":"Doces","preco":6.50,"descricao":"Receita tradicional","imagem":"https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop","isPromo":false}]</script>
+        </section>
+
+        <section id="promocoes" class="page">
+            <section class="promo-hero"><h1>PromoÃ§Ãµes</h1><p style="font-size:1.1rem;color:white;margin-top:var(--spacing-md)">Economize com nossos combos</p></section>
+            <section class="promo-section"><div id="combosGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px;max-width:1200px;margin:0 auto;"></div></section>
+        </section>
+
+        <section id="galeria" class="page">
+            <section class="gallery-hero"><h1>Galeria</h1></section>
+            <section class="gallery-content"><div class="gallery-item"><img src="https://i.im.ge/2026/01/28/GGO3Mz.imagem-2026-01-27-184726431.png" alt="Ambiente" loading="lazy"></div><div class="gallery-item"><img src="https://www.tasteofhome.com/wp-content/uploads/2017/09/exps37407_THE1213734_37407_WEB.jpg" alt="Cappuccino" loading="lazy"></div></section>
+        </section>
+
+        <section id="depoimentos" class="page">
+            <section class="depoimentos-hero"><h1>Depoimentos</h1></section>
+            <section class="depoimentos-content"><article class="depoimento-card"><p>"Encontrei meu cafÃ© perfeito aqui!"</p><div class="depoimento-author">â­â­â­â­â­ Fabio Saldanha</div></article><article class="depoimento-card"><p>"Ã“timo lugar para trabalhar!"</p><div class="depoimento-author">â­â­â­â­â­ Alex Amaral</div></article></section>
+        </section>
+
+        <section id="blog" class="page">
+            <section class="blog-hero"><h1>Blog</h1></section>
+            <section class="blog-content"><article class="blog-post"><div class="blog-date">ðŸ“… 25 de Janeiro, 2026</div><h3>Os Segredos da ExtraÃ§Ã£o Perfeita</h3><p class="blog-excerpt">TÃ©cnicas e temperaturas ideais.</p></article></section>
+        </section>
+
+        <section id="contato" class="page">
+            <section class="contact-hero"><h1>Fale Conosco</h1></section>
+            <section class="contact-content"><article class="contact-info"><h2>ðŸ“ LocalizaÃ§Ã£o</h2><p>IcaraÃ­ â€” NiterÃ³i - RJ</p></article><form class="contact-form" id="contactForm"><div class="form-group"><label for="name">Nome</label><input id="name" name="name" required></div><div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" required></div><div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" required></textarea></div><button type="submit" class="btn btn-primary">Enviar Mensagem</button></form></section>
+        </section>
+
+        <section id="checkout" class="page">
+            <section class="checkout-section"><h1>Carrinho</h1><div class="checkout-grid"><div><h2>Seu Pedido</h2><ul class="order-list" id="orderList"><li style="text-align:center;color:#999">Carrinho vazio</li></ul></div><div class="checkout-summary"><h3>Resumo</h3><p>Subtotal: <span id="subtotal">R$ 0,00</span></p><p><strong>Total: <span id="total">R$ 0,00</span></strong></p><button id="checkoutBtn" class="btn btn-primary">Finalizar Compra</button></div></div></section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content"><div class="footer-section"><h3>CafÃ© do Guerreiro</h3><p>Um cafÃ© pensado para quem valoriza qualidade.</p></div><div class="footer-section"><h3>Links RÃ¡pidos</h3><ul><li><a href="#home">Home</a></li><li><a href="#menu">Menu</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li></ul></div><div class="footer-section"><h3>HorÃ¡rio</h3><p>Seg-Sex: 7h-20h<br>SÃ¡b: 8h-18h</p></div></div>
+        <div class="footer-bottom">&copy; 2026 CafÃ© do Guerreiro</div>
+    </footer>
+
+    <script>
+    (function(){
+        const sections = Array.from(document.querySelectorAll('.page'));
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+        const cartKey = 'cg_cart_v1';
+
+        function show(targetId){
+            sections.forEach(s=>s.classList.toggle('active', s.id===targetId));
+            navLinks.forEach(a=>a.classList.toggle('active', a.dataset.target===targetId));
+            if(targetId==='menu') renderMenu();
+            if(targetId==='checkout') renderCheckout();
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+
+        function onHash(){ const id = location.hash.replace('#','') || 'home'; if(document.getElementById(id)) show(id); else show('home'); }
+        window.addEventListener('hashchange', onHash);
+        navLinks.forEach(a=>a.addEventListener('click', e=>{ const t=a.dataset.target||a.getAttribute('href').replace('#',''); location.hash='#'+t;}));
+        onHash();
+
+        // Theme: respect saved preference, otherwise follow OS preference
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', ()=>{
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('cg_theme', document.body.classList.contains('dark-mode')?'dark':'light');
+        });
+        const storedTheme = localStorage.getItem('cg_theme');
+        if(storedTheme === 'dark' || (storedTheme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Cart
+        function getCart(){ try{return JSON.parse(localStorage.getItem(cartKey))||[]}catch(e){return[]} }
+        function saveCart(c){ localStorage.setItem(cartKey, JSON.stringify(c)); updateCartCount(); }
+        function updateCartCount(){ const c=getCart(); document.getElementById('cartCount').textContent = c.reduce((s,i)=>s+i.qty,0); }
+        updateCartCount();
+
+        // Menu render
+        function renderMenu(){ const raw=document.getElementById('menu-data'); if(!raw) return; let items; try{items=JSON.parse(raw.textContent)}catch(e){items=[]}
+            const grid=document.getElementById('menuGrid'); grid.innerHTML=''; items.forEach(it=>{ const el=document.createElement('div'); el.className='menu-item-card'; el.innerHTML=`<div class="menu-item-thumb"><img loading="lazy" src="${it.imagem}" alt="${it.nome}"></div><div class="menu-item-meta"><strong>${it.nome}</strong><div style="font-size:.95rem;color:#666">${it.descricao}</div><div class="price">R$ ${it.preco.toFixed(2)}</div></div><div><button class="btn add-cart">Adicionar</button></div>`; el.querySelector('.add-cart').addEventListener('click', ()=>{ const cart=getCart(); const found=cart.find(x=>x.id===it.id); if(found) found.qty++; else cart.push({id:it.id,nome:it.nome,preco:it.preco,qty:1}); saveCart(cart); alert(it.nome+' adicionado ao carrinho'); }); grid.appendChild(el); }); }
+
+        function renderCheckout(){ const list=document.getElementById('orderList'); const subtotalEl=document.getElementById('subtotal'); const totalEl=document.getElementById('total'); const cart=getCart(); list.innerHTML=''; if(!cart.length){ list.innerHTML='<li style="text-align:center;color:#999">Carrinho vazio</li>'; subtotalEl.textContent='R$ 0,00'; totalEl.textContent='R$ 0,00'; return;} let subtotal=0; cart.forEach(item=>{ const li=document.createElement('li'); li.style.display='flex'; li.style.justifyContent='space-between'; li.innerHTML=`<span>${item.nome} Ã— ${item.qty}</span><strong>R$ ${(item.preco*item.qty).toFixed(2)}</strong>`; list.appendChild(li); subtotal += item.preco*item.qty; }); subtotalEl.textContent='R$ '+subtotal.toFixed(2); totalEl.textContent='R$ '+subtotal.toFixed(2); }
+
+        document.getElementById('checkoutBtn')?.addEventListener('click', ()=>{ const cart=getCart(); if(!cart.length){ alert('Carrinho vazio'); return; } alert('Compra finalizada â€” exemplo. Carrinho serÃ¡ limpo.'); localStorage.removeItem(cartKey); updateCartCount(); renderCheckout(); location.hash='#home'; });
+
+        document.getElementById('contactForm')?.addEventListener('submit', function(e){ e.preventDefault(); alert('Obrigado pela sua mensagem! Responderemos em breve.'); this.reset(); location.hash='#home'; });
+    })();
+    </script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
+
+

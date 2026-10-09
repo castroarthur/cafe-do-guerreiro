@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entre na sua conta do Cafe do Guerreiro 2.0 ou crie um cadastro novo." />
+  <title>Login | Cafe do Guerreiro 2.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --auth-title-color: #4b2e19;
+    }
+
+    .auth-wrap {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .auth-card {
+      width: min(100%, 560px);
+      border-radius: 20px;
+      background: linear-gradient(145deg, #f6efe4, #fffaf2);
+      border: 1px solid rgba(111, 78, 55, .2);
+      box-shadow: 0 18px 44px rgba(57, 36, 20, .16);
+      padding: 1.25rem;
+    }
+
+    .auth-title {
+      margin: .2rem 0 1rem;
+      font-size: 1.6rem;
+      color: var(--auth-title-color, #4b2e19);
+      text-align: center;
+    }
+
+    .auth-title-text {
+      color: var(--auth-title-color, #4b2e19);
+    }
+
+    .auth-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .4rem;
+      margin-bottom: 1rem;
+    }
+
+    .auth-tab {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid #c7a07a;
+      background: #fff;
+      color: #5a3a24;
+      border-radius: 10px;
+      padding: .65rem .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .auth-tab.active {
+      background: #5a3a24;
+      color: #fff;
+      border-color: #5a3a24;
+    }
+
+    .auth-panel {
+      display: grid;
+      gap: .75rem;
+    }
+
+    [hidden],
+    .auth-panel[hidden] {
+      display: none !important;
+    }
+
+    .auth-label {
+      font-weight: 700;
+      color: #4b2e19;
+      font-size: .95rem;
+    }
+
+    .auth-input {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #c8ab8f;
+      background: #fff;
+      padding: .75rem .9rem;
+      font-size: .97rem;
+      outline: none;
+    }
+
+    .auth-input:focus {
+      border-color: #5a3a24;
+      box-shadow: 0 0 0 3px rgba(90, 58, 36, .15);
+    }
+
+    html[data-theme="dark"] .auth-input,
+    body[data-theme="dark"] .auth-input {
+      background: #fff;
+      color: #1f1f1f;
+      border-color: #b8b8b8;
+    }
+
+    html[data-theme="dark"] .auth-card,
+    body[data-theme="dark"] .auth-card {
+      background: linear-gradient(145deg, #1f1a16, #2a221c);
+      border-color: rgba(255, 255, 255, .15);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .45);
+    }
+
+    html[data-theme="dark"] .auth-input::placeholder,
+    body[data-theme="dark"] .auth-input::placeholder {
+      color: #6d6d6d;
+    }
+
+    html[data-theme="dark"] .auth-note,
+    body[data-theme="dark"] .auth-note {
+      color: #d8c5b2;
+    }
+
+    html[data-theme="dark"] body[data-page="auth"] .auth-card .auth-title,
+    body[data-theme="dark"] body[data-page="auth"] .auth-card .auth-title,
+    html[data-theme="dark"] .auth-title,
+    body[data-theme="dark"] .auth-title {
+      color: #e9d8c5 !important;
+    }
+
+    html[data-theme="dark"],
+    body[data-theme="dark"] {
+      --auth-title-color: #e9d8c5;
+    }
+
+    html[data-theme="dark"] #authTitle,
+    body[data-theme="dark"] #authTitle {
+      color: #e9d8c5 !important;
+    }
+
+    html[data-theme="dark"] .auth-title-text,
+    body[data-theme="dark"] .auth-title-text {
+      color: #e9d8c5 !important;
+      -webkit-text-fill-color: #e9d8c5 !important;
+    }
+
+    html[data-theme="dark"] .auth-label,
+    body[data-theme="dark"] .auth-label {
+      color: #e9d8c5;
+    }
+
+    html[data-theme="dark"] .auth-tab,
+    body[data-theme="dark"] .auth-tab {
+      background: #2b2723 !important;
+      border-color: #54463b !important;
+      color: #f5e6d6 !important;
+    }
+
+    html[data-theme="dark"] .auth-tab.active,
+    body[data-theme="dark"] .auth-tab.active {
+      background: #f0dbc6 !important;
+      border-color: #f0dbc6 !important;
+      color: #2f1f14 !important;
+    }
+
+    html[data-theme="dark"] #authModeInfo,
+    body[data-theme="dark"] #authModeInfo {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      padding: .55rem .7rem;
+    }
+
+    .auth-submit {
+      width: 100%;
+      margin-top: .4rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #5a3a24, #7a4f2f);
+      color: #fff;
+      font-weight: 700;
+      padding: .8rem 1rem;
+      cursor: pointer;
+    }
+
+    .auth-note {
+      margin: .5rem 0 0;
+      font-size: .9rem;
+      color: #69452d;
+      text-align: center;
+    }
+
+    @media (max-width: 580px) {
+      .auth-card {
+        border-radius: 16px;
+        padding: 1rem;
+      }
+
+      .auth-title {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="auth">
+  <a href="#main" class="skip-to-main">Pular para conteudo principal</a>
+  <header>
+    <nav class="navbar container">
+      <div class="logo"><a href="index.html"><img src="https://i.im.ge/QMm6nVh/image_2026-06-10_163918077.png" alt="Cafe do Guerreiro" /></a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" aria-label="Alternar tema">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container auth-wrap">
+    <section class="auth-card" aria-label="Acesso a conta">
+      <h1 id="authTitle" class="auth-title"><span class="auth-title-text">Acesse sua conta</span></h1>
+
+      <div class="auth-tabs" role="tablist" aria-label="Tipo de acesso">
+        <button class="auth-tab active" id="tabLogin" type="button" role="tab" aria-selected="true">Entrar</button>
+        <button class="auth-tab" id="tabRegister" type="button" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+
+      <div id="alreadyLogged" class="auth-note" hidden></div>
+
+      <form id="loginForm" class="auth-panel" autocomplete="on">
+        <div>
+          <label class="auth-label" for="loginEmail">E-mail</label>
+          <input class="auth-input" id="loginEmail" name="email" type="email" required />
+        </div>
+        <div>
+          <label class="auth-label" for="loginSenha">Senha</label>
+          <input class="auth-input" id="loginSenha" name="senha" type="password" minlength="6" required />
+        </div>
+        <button class="auth-submit" type="submit">Entrar agora</button>
+        <button id="forgotPasswordBtn" class="btn-text" type="button" style="justify-self:start;">Esqueci minha senha</button>
+      </form>
+
+      <form id="registerForm" class="auth-panel" autocomplete="on" hidden>
+        <div>
+          <label class="auth-label" for="registerNome">Nome completo</label>
+          <input class="auth-input" id="registerNome" name="nome" type="text" minlength="5" autocomplete="name" autocapitalize="characters" style="text-transform: uppercase;" required />
+        </div>
+        <div>
+          <label class="auth-label" for="registerEmail">E-mail</label>
+          <input class="auth-input" id="registerEmail" name="email" type="email" required />
+        </div>
+        <div>
+          <label class="auth-label" for="registerSenha">Senha</label>
+          <input class="auth-input" id="registerSenha" name="senha" type="password" minlength="6" required />
+        </div>
+        <div>
+          <label class="auth-label" for="registerConfirmarSenha">Confirmar senha</label>
+          <input class="auth-input" id="registerConfirmarSenha" name="confirmarSenha" type="password" minlength="6" required />
+        </div>
+        <button class="auth-submit" type="submit">Criar conta</button>
+      </form>
+
+      <form id="forgotForm" class="auth-panel" autocomplete="on" hidden>
+        <div>
+          <label class="auth-label" for="forgotEmail">E-mail da conta</label>
+          <input class="auth-input" id="forgotEmail" name="email" type="email" required />
+        </div>
+        <p id="forgotModeHint" class="auth-note" style="text-align:left;margin:0;"></p>
+        <div id="forgotLocalFields">
+          <div>
+            <label class="auth-label" for="forgotNovaSenha">Nova senha (modo local)</label>
+            <input class="auth-input" id="forgotNovaSenha" name="novaSenha" type="password" minlength="6" />
+          </div>
+          <div>
+            <label class="auth-label" for="forgotConfirmarSenha">Confirmar nova senha (modo local)</label>
+            <input class="auth-input" id="forgotConfirmarSenha" name="confirmarSenha" type="password" minlength="6" />
+          </div>
+        </div>
+        <button id="forgotSubmitBtn" class="auth-submit" type="submit">Recuperar senha</button>
+      </form>
+
+      <p id="authModeInfo" class="auth-note"></p>
+      <p class="auth-note">Seu acesso fica salvo neste navegador para facilitar seu retorno.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-bottom">© 2026 Cafe do Guerreiro 2.0</div>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="js/ui.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

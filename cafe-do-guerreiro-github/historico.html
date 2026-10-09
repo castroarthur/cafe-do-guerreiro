@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CafÃ© do Guerreiro 2.0 - HistÃ³rico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-auth-required="true">
+    <header>
+        <nav class="navbar container">
+            <div class="logo"><a href="index.html"><img src="https://i.im.ge/QMm6nVh/image_2026-06-10_163918077.png" alt="CafÃ© do Guerreiro" /></a></div>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">â˜°</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="promocoes.html" class="nav-link">PromoÃ§Ãµes</a></li>
+                <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="favoritesBtn" aria-label="Favoritos">â˜†</button>
+                <button id="cartBtn" aria-label="Carrinho">ðŸ›’ <span id="cartCount">0</span></button>
+                <button id="themeToggle" aria-label="Alternar tema">ðŸŒ“</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" id="main">
+        <section class="section hero">
+            <h1>HistÃ³rico de Pedidos</h1>
+            <p class="subtitle">Consulte seus pedidos e meios de pagamento.</p>
+        </section>
+
+        <section class="section">
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:.65rem;">
+                <a class="btn-text" href="checkout.html">Voltar para Pagamentos</a>
+                <button id="clearHistoryBtn" type="button" class="btn-text">Apagar histÃ³rico</button>
+            </div>
+            <p id="orderHistoryEmpty" class="form-hints" hidden>Nenhum pedido registrado atÃ© agora.</p>
+            <div id="orderHistoryList" class="history-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-compact">
+            <p class="footer-brand"><strong>â˜• CafÃ© do Guerreiro 2.0</strong><span>Qualidade e tradiÃ§Ã£o em cada xÃ­cara.</span></p>
+            <p class="footer-hours"><strong>HorÃ¡rio</strong><span>Seg-Sex: 7h-20h â€¢ SÃ¡bado: 8h-18h â€¢ Domingo: Fechado</span></p>
+            <nav class="footer-links" aria-label="NavegaÃ§Ã£o do rodapÃ©">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="menu.html">Menu</a>
+                <a href="promocoes.html">PromoÃ§Ãµes</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="depoimentos.html">Depoimentos</a>
+                <a href="blog.html">Blog</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+        <div class="container footer-bottom">Â© 2026 CafÃ© do Guerreiro 2.0</div>
+    </footer>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="js/ui.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/app.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
+
+
